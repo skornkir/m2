@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]>
+<html class="no-js ie iem7" lang="ru" dir="ltr"><![endif]-->
+<!--[if lte IE 6]>
+<html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="ru" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>
+<html class="no-js ie lt-ie9 lt-ie8" lang="ru" dir="ltr"><![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie lt-ie9" lang="ru" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]>
+<html class="no-js ie" lang="ru" dir="ltr"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js" lang="ru" dir="ltr"><!--<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <link rel="apple-touch-icon-precomposed"
+          href="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/apple-touch-icon-precomposed-144x144.png"
+          sizes="144x144"/>
+    <link rel="apple-touch-icon-precomposed"
+          href="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/apple-touch-icon-precomposed-72x72.png"
+          sizes="72x72"/>
+    <link rel="apple-touch-icon-precomposed"
+          href="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/apple-touch-icon-precomposed-114x114.png"
+          sizes="114x114"/>
+    <link rel="apple-touch-icon-precomposed"
+          href="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/apple-touch-icon-precomposed.png"/>
+    <meta http-equiv="cleartype" content="on"/>
+    <meta name="MobileOptimized" content="width"/>
+    <meta name="Generator" content="Drupal 7 (http://drupal.org)"/>
+    <link rel="shortcut icon" href="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/favicon.ico"
+          type="image/vnd.microsoft.icon"/>
+    <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>MandarinPay - простые решения в мире финансов</title>
+    <style>
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/css/modules/system/system.base.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/css/modules/system/system.menus.theme.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/css/modules/system/system.messages.theme.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/css/modules/system/system.theme.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/date/date_api/date.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/css/modules/comment/comment.theme.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/modules/node/node.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/views/css/views.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/css/modules/field/field.theme.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/css/modules/user/user.base.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/css/modules/user/user.theme.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/ckeditor/css/ckeditor.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/admin_menu/admin_menu.css?p74j5r");
+    </style>
+    <style>
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/ui/themes/base/jquery.ui.core.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/ui/themes/base/jquery.ui.theme.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/ui/themes/base/jquery.ui.tooltip.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/ctools/css/ctools.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/libraries/jgrowl/jquery.jgrowl.min.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/m2messages/css/nicemessages_positions.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/m2messages/css/nicemessages_jgrowl.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/m2messages/css/shadows.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/panels/css/panels.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/mandarin2_blocks/css/style.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_ruswebs/ruswebs_user_links/ruswebs_user_links.css?p74j5r");
+    </style>
+    <link type="text/css" rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" media="all"/>
+    <style>
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/HoldOn/HoldOn.min.css?p74j5r");
+    </style>
+    <style>
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/css/bootstrap.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/css/awesome-bootstrap-checkbox.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/css/datepicker.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/css/mandarin.normalize.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/css/mandarin.hacks.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/css/mandarin.styles.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/css/new.styles.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/css/fontello/css/fontello.css?p74j5r");
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/css/kir.css?p74j5r");
+    </style>
+
+    <!--[if lte IE 8]>
+    <style>
+        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/css/mandarin.no-query.css?p74j5r");
+    </style>
+    <![endif]-->
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.js?v=1.10.2"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/misc/jquery.once.js?v=1.2"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/misc/drupal.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/js/no-js.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/ui/ui/jquery.ui.core.js?v=1.10.2"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/ui/ui/jquery.ui.widget.js?v=1.10.2"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/ui/ui/jquery.ui.position.js?v=1.10.2"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/ui/ui/jquery.ui.tooltip.js?v=1.10.2"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/admin_menu/admin_menu.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/default/files/languages/ru_Q8xy6mZwd4XDrh8gEMII0VM2QtaG7CwsvgTUOx2TX_8.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/libraries/jgrowl/jquery.jgrowl.min.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/m2messages/js/nicemessages.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/devel/devel_krumo_path.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/mandarin2_blocks/js/transactions_list.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/mandarin2_blocks/js/merchant_left_menu.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/HoldOn/HoldOn.min.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/mandarin.behaviors.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/menu-disable.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/sha256.jquery.debug.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/jquery.cookie.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/onoff.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/uniform.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/dynamic.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/bootstrap.min.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/bootstrap-datepicker.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/bootstrap-datepicker.ru.js?p74j5r"></script>
+    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/date.js?p74j5r"></script>
+    <script>jQuery.extend(Drupal.settings, {
+            "basePath": "\/",
+            "pathPrefix": "",
+            "limit_export": "400",
+            "nicemessages": {"position": "top-right", "items": []},
+            "landingMark": {"user_logged": true},
+            "tableHeaderOffset": "Drupal.admin.height",
+        });</script>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/ui-lightness/jquery-ui.css"
+          rel="stylesheet"/>
+
+    <!--  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />-->
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>-->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+</head>
+<body class="html front logged-in page-node user-merchant">
+<a href="#main-content" class="element-invisible element-focusable">Перейти к основному содержанию</a>
+<div class="wrapper">
+    <header>
+
+        <a href="/" class="logo type04"></a>
+
+        <div class="left-menu">
+            <div class="element element-1">
+                <div class="menu-text">
+                    <!--                        <a target="_blank" href="--><!--">Документооборот</a>-->
+                    <ul id="list-documents-wrapper">
+                        <li class="documents">
+                            <a href="#" class="document-menu">Документооборот</a>
+                            <div class="triangle-wrapper">
+                                <div class="triangle"></div>
+                            </div>
+                            <ul id="document-menu-items">
+                                <li>
+                                    <a href="https://cloud.mandarinbank.com/index.php/login?user=kir13214@ki82r.ru&pass=eGxUNmo2YmVqUQ==">
+                                        MandarinCloud </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="element element-3">
+                <div class="menu-text">
+
+
+                    <ul id="list-accounts-wrapper">
+                        <li class="accounts">
+                            <a href="#" class="settings ">Настройки аккаунта</a>
+                            <div class="triangle-wrapper">
+                                <div class="triangle"></div>
+                            </div>
+                            <ul id="list-projects">
+                                <li><a href="/merch_settings/14" data_tab="1">Анкета</a></li>
+                                <li><a href="/merch_settings/14" data_tab="2">Безопасность</a></li>
+                                <li><a href="/merch_settings/14" data_tab="3">Пользователи</a></li>
+                                <li><a href="/merch_settings/14" data_tab="4">Оповещения</a></li>
+                                <li><a href="/merch_settings/14" data_tab="5">Реквизиты</a></li>
+                                <!--                    -->
+                                <!--                    -->
+                                <!--                        <li><a class="" href="#">Реквизиты</a></li>-->
+                                <!--                    -->
+                                <li><a href="/merch_settings/14" data_tab="6">Админ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="element element-4">
+                <div class="menu-text">
+                    <a class="projects-menu" title="Настройки">
+                        <ul id="list-projects-wrapper">
+                            <li class="projects">
+                                <a class="settings-project-item" href="#">Настройки проектов</a>
+                                <div class="triangle-wrapper">
+                                    <div class="triangle"></div>
+                                </div>
+                                <ul id="list-projects">
+                                    <li><a href="/shop_settings/123723/14">MID 491 (test shop2)</a></li>
+                                    <li><a href="/shop_settings/123838/14">MID 605 (TEST SALE)</a></li>
+                                    <li><a href="/shop_settings/123854/14">MID 636 (tqas)</a></li>
+                                    <li><a href="/shop_settings/124650/14">MID 764 (tasda)</a></li>
+                                    <li><a href="/shop_settings/124651/14">MID 725 (gasd)</a></li>
+                                    <li><a href="/shop_settings/124655/14">MID 726 (ещё тестовый проект рф...)</a></li>
+                                    <li><a href="/shop_settings/124684/14">MID 763 (Test project)</a></li>
+                                    <li><a href="/shop_settings/124714/14">MID 783 (Test 14)</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <ul class="user">
+            <li><a class="sound" href="mailto:support@mandarinbank.com"></a></li>
+
+            <li class="balances top-menu">
+                <a class="balance-item" href="#">Баланс: 100 500.00</a>
+                <div class="triangle-wrapper">
+                    <div class="triangle"></div>
+                </div>
+                <ul id="list-balances">
+                    <li><a href="#">Баланс Воронеж: нет данных</a></li>
+                    <li><a href="#">Баланс РИБ: 100 500.00</a></li>
+                </ul>
+            </li>
+            <li>
+					  <span class="clientid">
+						<div class="">Client id: 50</div>
+					  </span>
+            </li>
+            <li>
+					 <span class="email">
+						 <i class="fa fa-user"></i>
+						 <div class="account-email">kir13214@ki82r.ru</div>
+					 </span>
+            </li>
+            <li><a class="exit" href="/user/logout" title="Выход"></a></li>
+        </ul>
+        <span class="menu-open"></span>
+    </header>
+
+    <div class="content no-exist-top-menu">
+
+        <aside class="l-region l-region--sidebar-first">
+            <div id="block-mandarin2-blocks-left-menu-corporate"
+                 class="block block--mandarin2-blocks block--mandarin2-blocks-left-menu-corporate">
+                <div class="block__content">
+                    <nav id="block-menu-menu-menu-left-menu-2" role="navigation"
+                         class="block block--menu block--menu-menu-menu-left-menu-2"
+                         style="transform: scale(1);">
+                        <ul class="menu left-menu type2">
+                            <li class="leaf front"><a href="/" title=""><span>Мой Поиск</span></a></li>
+                            <li class="leaf sales"><a href="/sales" title=""><span>Продажи</span></a></li>
+                            <li class="leaf payments"><a href="/payments" title=""><span>Выплаты</span></a></li>
+                            <li class="leaf installment_plan"><a href="/installment_plan"
+                                                                 title=""><span>POS-заявки</span></a></li>
+                            <li class="leaf transactionslist"><a href="/transactionslist"
+                                                                 title=""><span>Аналитика</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <nav id="block-menu-menu-left-menu" role="navigation" class="block block--menu block--menu-menu-left-menu">
+
+            </nav>
+        </aside>
+
+
+        <div class="core-wrapper exist-sidebar-second">
+            <div class="core">
+                <div id="block-mandarin2-blocks-filter-transaction"
+                     class="block block--mandarin2-blocks block--mandarin2-blocks-filter-transaction">
+                    <div class="block__content">
+
+                        <h2 style="margin: 0;padding-left: 20px;">Поиск транзакций</h2>
+                        <div class="filters-transactions">
+                            <div class="message"></div>
+                            <div class="title-search">
+                                Выберите параметр, по которому хотите осуществить поиск
+                            </div>
+                            <select class="filter-select">
+                                <option value="cs1">ID платежа</option>
+                                <option value="id">ID Транзакции</option>
+                                <option value="remote_id">ID сервис-провайдера</option>
+                                <option value="rrn">RRN</option>
+                                <option value="email">Email</option>
+                                <option value="phone">Телефон</option>
+                                <option value="pan">Номер карты</option>
+                                <option value="order_id">ID Заказа</option>
+                                <option value="amount">Сумма</option>
+                                <option value="cs2">Custom Value 1</option>
+                                <option value="cs3">Custom Value 2</option>
+                                <option value="cs4">Custom Value 3</option>
+                                <option value="cs5">Custom Value 4</option>
+                                <option value="cs6">Custom Value 5</option>
+                                <option value="cs7">Custom Value 6</option>
+                                <option value="cs8">Custom Value 7</option>
+                                <option value="cs9">Custom Value 8</option>
+                            </select>
+                            <div class="title-value-search">
+                                Введите искомое значение
+                            </div>
+                            <input class="search-value" type='text'
+                                   placeholder="Введите значение 9de75496842847e3809898eab6a538d7 для поиска...">
+                            <div class="search-transaction">Найти</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="block-mandarin2-blocks-transactions-list"
+                     class="block block--mandarin2-blocks block--mandarin2-blocks-transactions-list">
+                    <div class="block__content">
+                        <div class="table-l-wrapper trans all">
+                            <div class="table-l trans">
+                                <span style="display:none" class="hidden-element h-summ">0</span>
+                                <span style="display:none" class="hidden-element h-count">0</span>
+                                <span style="display:none" class="hidden-element h-app-id">0</span>
+                                <span style="display:none" class="hidden-element h-uid">14</span>
+                                <span style="display:none" class="hidden-element h-type">all</span>
+                                <span style="display:none" class="hidden-element h-theme_type">transactions_list_corporate</span>
+                                <span style="display:none" class="hidden-element h-transactions">10</span>
+                                <span style="display:none" class="hidden-element h-sort_by">created</span>
+
+                                <span style="display:none" class="hidden-element h-sort_order">DESC</span>
+
+                                <div class="quant-per-page">
+                                    <p>Строк</p>
+                                    <select>
+                                        <option selected data-number='10'>10</option>
+                                        <option data-number='20'>20</option>
+                                        <option data-number='50'>50</option>
+                                        <option data-number='100'>100</option>
+                                    </select>
+                                </div>
+                                <div class="pages trans" data-pages="0">
+                                    <em class="prev" style='display:none;'></em>
+
+                                    <em class="next"></em>
+                                </div>
+                                <!--
+                                <div class="search">
+                                    <input type="text" placeholder="Поиск по транзакциям" value="">
+                                </div>
+                                -->
+                                <div class="ajax-wrapper">
+                                    <div class='no-search'>Для показа транзакций воспользуйтесь поиском</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <aside class="l-region l-region--sidebar-second">
+            <div id="block-mandarin2-blocks-info-transactions"
+                 class="block block--mandarin2-blocks block--mandarin2-blocks-info-transactions">
+                <div class="block__content">
+                    <h2>Расширенная информация</h2>
+                    <div class="info-transaction">
+                        <div class="choose-transaction">
+                            Выберите транзакцию
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+    <div class="clear-wrapper"></div>
+</div>
+
+
+<footer class="m-footer">
+    <div>
+        <ul class="nav">
+
+            <li class=""><a href="http://mandarinpay.com/conditions">Условия</a></li>
+            <li class=""><a href="http://mandarinpay.com/security">Безопасность</a></li>
+            <li class=""><a href="http://docs.mandarinbank.com">Интеграция</a></li>
+            <li class=""><a href="http://mandarinpay.com/contacts">Контакты</a></li>
+            <li class=""><a href="https://heartbeat.mandarinpay.com">Мониторинг транзакций (API)</a></li>
+            <!--                <div class="element element-2"><div class="menu-text"><a target="_blank" href=""></a></div></div>-->
+        </ul>
+
+        <div>
+            <p>© 2015 PSP, LLC</p>
+            <p>Платежный сервис «Mandarin»</p>
+        </div>
+        <h6>Банковские услуги предоставляет РНКО "РИБ", лицензия Банка России №2749-К от 08.04.2015 г.</h6>
+        <ul class="icons">
+            <li><img src="/sites/all/themes/mandarin/img/visa_icon.png" width="64" height="28" alt=""></li>
+            <li><img src="/sites/all/themes/mandarin/img/mastercard_icon.png" width="69" height="26" alt=""></li>
+            <li><img src="/sites/all/themes/mandarin/img/pci_icon.png" width="72" height="28" alt=""></li>
+            <li><img src="/sites/all/themes/mandarin/img/thawte_icon.png" width="90" height="28" alt=""></li>
+        </ul>
+    </div>
+</footer>
+
+
+</body>
+</html>
