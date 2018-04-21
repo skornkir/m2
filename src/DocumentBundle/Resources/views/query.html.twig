@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+    <Opcode>{{ operation }}</Opcode>
+    <Product>{{ productId }}</Product>
+    <hash>{{ hash }}</hash>
+    <source>121</source>
+    {% import "@Document/elements.twig" as showQuery %}
+    {{ showQuery.elements(query) }}
+</request>

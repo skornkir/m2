@@ -1,0 +1,15 @@
+.logo{
+    position: absolute;
+    left: 20px;
+}
+
+@media only screen and (max-width: 991px){
+    .logo {
+        position: absolute;
+        left: 60px;
+    }
+}
+
+.dataTables_paginate.paging_simple_numbers{
+    text-align: right;
+}

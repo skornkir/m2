@@ -1,0 +1,23 @@
+{% macro elements(childrens) %}
+    {% for key, children in childrens %}
+        <{{ key }}>
+        {% if (children is iterable) %}
+            {{ _self.elements(children) }}
+        {% else %}
+            {{ children }}
+        {% endif %}
+        </{{ key }}>
+    {% endfor %}
+{% endmacro %}
+
+<?xml version="1.0" encoding="utf-8"?>
+<Opcode>750</Opcode>
+<Product>000464-0001-0001</Product>
+<hash>79067ab34a8e49d39a22c9c8f8331279</hash>
+<source>121</source>
+<StandardDocument>
+    <Offset>
+        1
+    </Offset>
+</StandardDocument>
+</request>

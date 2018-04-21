@@ -1,0 +1,117 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h4 class="page-title">Список типовых документов</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Добавить документ
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <form class="mandarin2-export-workflow-form" action="/workflow/document" method="post" id="mandarin2-export-workflow-form" accept-charset="UTF-8">
+                            <div class="form-group">
+                                <input type="text" id="edit-documentname" name="DocumentName" value="" size="60" maxlength="1024" class="form-text form-control" placeholder="DocumentName">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="edit-documentdescription"  name="DocumentDescription" value="" size="60" maxlength="1024" placeholder="DocumentDescription" class="form-text form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="edit-documenttypeid" name="DocumentTypeID"  value="" size="60" maxlength="1024" class="form-text form-control" placeholder="DocumentTypeID">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="edit-documentexampleurl" name="DocumentExampleURL"  value="" size="60" maxlength="1024" class="form-text form-control" placeholder="DocumentExampleURL">
+                            </div>
+                            <input type="submit" id="edit-submit" name="op" value="Сохранить" class="form-submit btn btn-primary">
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-striped custom-table datatable dataTable no-footer" id="DataTables_Table_0"
+                   role="grid" aria-describedby="DataTables_Table_0_info">
+                <thead>
+                <tr role="row">
+                    <th style="width: 20px;" class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0"
+                        rowspan="1" colspan="1" aria-sort="ascending"
+                        aria-label="Employee: activate to sort column descending">ID
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                        aria-label="Employee ID: activate to sort column ascending" style="width: 250px;">DocumentName
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                        aria-label="Email: activate to sort column ascending" >DocumentDescription
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                        aria-label="Joining Date: activate to sort column ascending" style="width: 49px;">TypeID
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                        aria-label="Role: activate to sort column ascending" style="width: 50px;">URL
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                        aria-label="Payslip: activate to sort column ascending" style="width: 30px;">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                        colspan="1"
+                        aria-label="Action: activate to sort column ascending" style="width: 30px;">
+                        <i class="far fa-trash-alt"></i>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for document in documents %}
+                    <tr role="row">
+                        <td> {{ document['DocumentID'] }} </td>
+                        <td> {{ document['DocumentName'] }} </td>
+                        <td> {{ document['DocumentDescription']  | slice(0, 250) }} </td>
+                        <td> {{ document['DocumentTypeID'] }} </td>
+                        <td> {{ document['DocumentExampleURL'] }} </td>
+                        <td>
+                            <a href="#">
+                                <i class="fa fa-pencil-square-o"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                <ul class="pagination">
+                    <li class="paginate_button previous disabled" id="DataTables_Table_0_previous"><a href="#"
+                                                                                                      aria-controls="DataTables_Table_0"
+                                                                                                      data-dt-idx="0"
+                                                                                                      tabindex="0">Назад</a>
+                    </li>
+                    <li class="paginate_button active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1"
+                                                          tabindex="0">1</a></li>
+                    <li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2"
+                                                    tabindex="0">2</a></li>
+                    <li class="paginate_button next" id="DataTables_Table_0_next"><a href="#"
+                                                                                     aria-controls="DataTables_Table_0"
+                                                                                     data-dt-idx="3"
+                                                                                     tabindex="0">Вперед</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

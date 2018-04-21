@@ -360,8 +360,8 @@ table.dataTable {margin-bottom: 15px !important;margin-top: 15px !important;}
 	-o-transform: translate(0, 0);
 	transform: translate(0, 0);
 }
-.sidebar-menu .menu-arrow:before {content: "\f105";}
-.sidebar-menu li a.subdrop .menu-arrow {-ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); -o-transform: rotate(90deg); transform: rotate(90deg);}
+
+.sidebar-menu li a.subdrop .menu-arrow {-ms-transform: rotate(-90deg); -webkit-transform: rotate(-90deg); -o-transform: rotate(-90deg); transform: rotate(-90deg);}
 .noti-dot:before {content: '';width: 5px;height: 5px;border: 5px solid #ff9b44 ;-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;background-color: #ff9b44 ;z-index: 10;position: absolute;right: 37px;top: 17px;}
 .noti-dot:after {
 	content: '';
