@@ -24,8 +24,9 @@ class TypicalDocumentController extends Controller
      */
     function showTypicalContractAction(){
         $api = new ContractApi($this->container);
-        $contracts = $api->getTypicalDocuments();
-        return $this->render('@Document/TypicalDocuments/documents.html.twig',['contracts' => $contracts]);
+        $contracts = $api->getTypicalContracts();
+        dump($contracts);
+        return $this->render('@Document/TypicalDocuments/contracts.html.twig',['contracts' => $contracts]);
     }
 
     /**

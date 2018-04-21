@@ -32,7 +32,6 @@ class DocumentApi{
             'query' => $query,
             'productId' => $this->productId,
         ]);
-        dump($request);
         $response = $this->executeQuery($request);
         return $this->parserRequest($response);
     }
