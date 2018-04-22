@@ -24,18 +24,19 @@
                     <form class="mandarin2-export-workflow-form" action="/workflow/document" method="post"
                           id="mandarin2-export-workflow-form" accept-charset="UTF-8">
                         <div class="form-group">
-                            <input type="text" id="edit-documentname" name="DocumentName" value="" size="60"
+                            <input type="text" id="edit-documentname" name="ContractName" value="" size="60"
                                    maxlength="1024" class="form-text form-control" placeholder="ContractName">
                         </div>
                         <div class="form-group">
-                            <input type="text" id="edit-documentdescription" name="DocumentDescription" value=""
+                            <input type="text" id="edit-documentdescription" name="ContractDescription" value=""
                                    size="60" maxlength="1024" placeholder="ContractDescription"
                                    class="form-text form-control">
                         </div>
                         <div class="form-group">
-                            <input type="text" id="edit-documenttypeid" name="DocumentTypeID" value="" size="60"
+                            <input type="text" id="edit-documenttypeid" name="ContractHelpInfo" value="" size="60"
                                    maxlength="1024" class="form-text form-control" placeholder="ContractHelpInfo">
                         </div>
+
                         <div class="form-group">
                             <select>
                                 {% for key, name in documents %}
@@ -75,7 +76,7 @@
                         </div>
                     </div>
                     <div class="spliter"></div>
-                    <div class="body-document" style="display: none;">
+                        <div class="body-document" style="{%  if(loop.index != 1)%} display: none; {%  endif %} ">
                         <div class="item">
                             <span class="title">ContractName</span>
                             <span class="value">{{ contract['ContractName'] }}</span>

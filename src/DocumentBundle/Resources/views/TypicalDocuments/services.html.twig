@@ -1,0 +1,154 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ asset('assets/js/documents.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h4 class="page-title">Список типовых услуг</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+                        aria-expanded="false" aria-controls="collapseExample">
+                    Добавить услугу
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <form class="mandarin2-export-workflow-form" action="/workflow/document" method="post"
+                          id="mandarin2-export-workflow-form" accept-charset="UTF-8">
+                        <div class="form-group">
+                            <input type="text" id="edit-documentname" name="ServiceName" value="" size="60"
+                                   maxlength="1024" class="form-text form-control" placeholder="ServiceName">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="edit-documentdescription" name="ServiceDescription" value=""
+                                   size="60" maxlength="1024" placeholder="ServiceDescription"
+                                   class="form-text form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <select>
+                                {% for key, name in contracts %}
+                                    <option value="{{ key }}">{{ name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <input type="submit" id="edit-submit" name="op" value="Сохранить"
+                               class="form-submit btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="contracts document-wrapper">
+                {% for id, service in services %}
+
+                    <div class="contract-block-wrapper" number="{{ id }}">
+                        <div class="contract_name title-table">{{ service['ServiceName'] }}</div>
+
+                        <div class="actions">
+                            <div class="edit">
+                                <a target="_blank" href="/workflow/contract/5/edit">
+                                    <i class="fa fa-pencil-square-o"></i>
+                                </a>
+                            </div>
+                            <div class="delete">
+                                <i class="far fa-trash-alt"></i>
+                            </div>
+                            <div class="checked-document-list">
+                                <a>
+                                    <span>развернуть</span>
+                                    <i class="fa fa-2x fa-angle-up" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="spliter"></div>
+                        <div class="body-document" style="{%  if(loop.index != 1)%} display: none; {%  endif %} ">
+                            <div class="item">
+                                <span class="title">ServiceName</span>
+                                <span class="value">{{ service['ServiceName'] }}</span>
+                            </div>
+                            <div class="item">
+                                <span class="title">ServiceID</span>
+                                <span class="value">{{ service['ServiceID'] }}</span>
+                            </div>
+                            <div class="item">
+                                <span class="title">ServiceDescription</span>
+                                <span class="value">{{ service['ServiceDescription'] }}</span>
+                            </div>
+
+                            <div class="clear"></div>
+
+                            <table class="table table-striped custom-table datatable dataTable no-footer" id="DataTables_Table_0"
+                                   role="grid" aria-describedby="DataTables_Table_0_info">
+                                <thead>
+                                <tr role="row">
+                                    <th style="width: 20px;" class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" aria-sort="ascending"
+                                        aria-label="Employee: activate to sort column descending">ID
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                        aria-label="Employee ID: activate to sort column ascending" style="width: 250px;">ContractName
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                        aria-label="Email: activate to sort column ascending" >ContractDescription
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                        aria-label="Joining Date: activate to sort column ascending" style="width: 49px;">ContractHelpInfo
+                                    </th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% if service['contractList'] is not empty %}
+                                    {% for contract in service['contractList'] %}
+                                        <tr role="row">
+                                            <td> {{ contract['ContractID'] }} </td>
+                                            <td> {{ contract['ContractName'] }} </td>
+                                            <td> {{ contract['ContractDescription']  | slice(0, 250) }} </td>
+                                            <td> {{ contract['ContractHelpInfo'] }} </td>
+                                        </tr>
+                                    {% endfor %}
+                                {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                <ul class="pagination">
+                    <li class="paginate_button previous disabled" id="DataTables_Table_0_previous"><a href="#"
+                                                                                                      aria-controls="DataTables_Table_0"
+                                                                                                      data-dt-idx="0"
+                                                                                                      tabindex="0">Назад</a>
+                    </li>
+                    <li class="paginate_button active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1"
+                                                          tabindex="0">1</a></li>
+                    <li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2"
+                                                    tabindex="0">2</a></li>
+                    <li class="paginate_button next" id="DataTables_Table_0_next"><a href="#"
+                                                                                     aria-controls="DataTables_Table_0"
+                                                                                     data-dt-idx="3"
+                                                                                     tabindex="0">Вперед</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

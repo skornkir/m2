@@ -1,6 +1,5 @@
 $( document ).ready(function() {
     $('.contract_name.title-table, .checked-document-list a').click(function () {
-        console.log('click');
         var fa = $(this).closest('.contract-block-wrapper').find('.checked-document-list .fa');
         var span = $(this).closest('.contract-block-wrapper').find('.checked-document-list span');
         if(fa.hasClass('fa-angle-down')){

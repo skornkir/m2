@@ -31,7 +31,28 @@
 $(document).ready(function() {
 
 	$('select').select2();
-	// Sidebar overlay
+
+    var pathname = window.location.pathname;
+
+	$('#sidebar-menu > ul > li').each(function (e) {
+		var href = $(this).find('a').attr('href');
+		var li = $(this);
+		if(href == pathname){
+			$(this).addClass('active');
+			return;
+		}
+		if(li.hasClass('submenu')){
+			li.find('a').each(function () {
+                var href = $(this).attr('href');
+                if(href == pathname){
+                	$(this).addClass('active');
+                	li.addClass('active');
+                	li.show();
+				}
+            })
+		}
+    });
+
 
 	var $sidebarOverlay = $(".sidebar-overlay");
 	$("#mobile_btn, .task-chat").on("click", function(e) {

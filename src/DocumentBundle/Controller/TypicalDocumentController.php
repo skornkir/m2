@@ -4,6 +4,7 @@ namespace DocumentBundle\Controller;
 
 use DocumentBundle\Utils\ContractApi;
 use DocumentBundle\Utils\DocumentApi;
+use DocumentBundle\Utils\ServiceApi;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,8 +34,9 @@ class TypicalDocumentController extends Controller
      * @Route("admin/documentflow/services", name="typeservice")
      */
     function showTypicalServicetAction(){
-        $api = new ContractApi($this->container);
-        $contracts = $api->getTypicalDocuments();
-        return $this->render('@Document/TypicalDocuments/documents.html.twig',['contracts' => $contracts, 'documents' => array()] );
+        $api = new ServiceApi($this->container->get('twig'));
+        $services = $api->getTypicalServices();
+        $contracts = $api->contractApi->getTypicalContractOptions();
+        return $this->render('@Document/TypicalDocuments/services.html.twig',['services' => $services, 'contracts' => $contracts] );
     }
 }

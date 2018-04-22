@@ -31,7 +31,6 @@ class ContractApi extends DocumentApi
         ];
 
         $response = $this->getResponse($operation, $query);
-
         $documents = array();
         if(!empty($response)){
             $xml_result = simplexml_load_string($response);
@@ -50,6 +49,27 @@ class ContractApi extends DocumentApi
         return $documents;
     }
 
+    public function getTypicalContract($id){
+        $operation = 750;
+        $query = array(
+            'StandardContract' => [
+                'ContractID' => $id,
+            ]
+        );
+
+        $response = $this->getResponse($operation, $query);
+
+        libxml_use_internal_errors(true);
+        $xml_result = simplexml_load_string($response);
+        if (!$xml_result) {
+            return [];
+        }
+        else{
+            $item = $xml_result->entities;
+            return $this->parseContract($item);
+        }
+    }
+
     public function getTypicalContracts(){
         $operation = 750;
         $query = array(
@@ -62,28 +82,41 @@ class ContractApi extends DocumentApi
         return $this->parserRequest($response);
     }
 
+    public function getTypicalContractOptions(){
+        $contracts = $this->getTypicalContracts();
+        $options = array();
+        foreach ($contracts as $id => $contract){
+            $options[$id] = $contract['ContractName'];
+        }
+        return $options;
+    }
+
     protected function parserRequest($request){
         $contracts = array();
         if(!empty($request)){
             libxml_use_internal_errors(true);
             $xml_result = simplexml_load_string($request);
             if (!$xml_result) {
-                dump('no valid xml');
             }
             else{
                 foreach($xml_result->entities as $item){
                     $id = (string)$item->entity->StandardContract->ContractID;
-                    $contracts[$id] = array(
-                        "ContractID" => (string)$item->entity->StandardContract->ContractID,
-                        "ContractName" => (string)$item->entity->StandardContract->ContractName,
-                        "ContractDescription" => (string)$item->entity->StandardContract->ContractDescription,
-                        "ContractHelpInfo" => (string)$item->entity->StandardContract->ContractHelpInfo,
-                        "documentList" => "",
-                    );
+                    $contracts[$id] = $this->parseContract($item);
                     $contracts[$id]['documentList'] = $this->getDocumentContracts($id);
                 }
             }
         }
         return $contracts;
+    }
+
+    private function parseContract($item){
+        $contract = array(
+            "ContractID" => (string)$item->entity->StandardContract->ContractID,
+            "ContractName" => (string)$item->entity->StandardContract->ContractName,
+            "ContractDescription" => (string)$item->entity->StandardContract->ContractDescription,
+            "ContractHelpInfo" => (string)$item->entity->StandardContract->ContractHelpInfo,
+            "documentList" => "",
+        );
+        return $contract;
     }
 }

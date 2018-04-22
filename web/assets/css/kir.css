@@ -28,6 +28,7 @@
     float: left;
     margin-top: 8px;
     cursor: pointer;
+    width: 70%;
 }
 
 .document-wrapper .actions {
@@ -125,4 +126,8 @@
     font-size: 15px;
     padding-top: 6px;
     padding-left: 4px;
+}
+
+.submenu {
+
 }
