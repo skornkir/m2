@@ -1,5 +1,9 @@
 {% extends '@Admin/layout.html.twig' %}
 
+{% block js %}
+    <script type="text/javascript" src="{{ asset('assets/js/documents.js') }}"></script>
+{% endblock %}
+
 {% block content %}
 
     <div class="row">
@@ -10,30 +14,37 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+                        aria-expanded="false" aria-controls="collapseExample">
                     Добавить контракт
                 </button>
             </p>
             <div class="collapse" id="collapseExample">
                 <div class="card card-body">
-                    <form class="mandarin2-export-workflow-form" action="/workflow/document" method="post" id="mandarin2-export-workflow-form" accept-charset="UTF-8">
+                    <form class="mandarin2-export-workflow-form" action="/workflow/document" method="post"
+                          id="mandarin2-export-workflow-form" accept-charset="UTF-8">
                         <div class="form-group">
-                            <input type="text" id="edit-documentname" name="DocumentName" value="" size="60" maxlength="1024" class="form-text form-control" placeholder="ContractName">
+                            <input type="text" id="edit-documentname" name="DocumentName" value="" size="60"
+                                   maxlength="1024" class="form-text form-control" placeholder="ContractName">
                         </div>
                         <div class="form-group">
-                            <input type="text" id="edit-documentdescription"  name="DocumentDescription" value="" size="60" maxlength="1024" placeholder="ContractDescription" class="form-text form-control">
+                            <input type="text" id="edit-documentdescription" name="DocumentDescription" value=""
+                                   size="60" maxlength="1024" placeholder="ContractDescription"
+                                   class="form-text form-control">
                         </div>
                         <div class="form-group">
-                            <input type="text" id="edit-documenttypeid" name="DocumentTypeID"  value="" size="60" maxlength="1024" class="form-text form-control" placeholder="ContractHelpInfo">
+                            <input type="text" id="edit-documenttypeid" name="DocumentTypeID" value="" size="60"
+                                   maxlength="1024" class="form-text form-control" placeholder="ContractHelpInfo">
                         </div>
                         <div class="form-group">
                             <select>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
+                                {% for key, name in documents %}
+                                    <option value="{{ key }}">{{ name }}</option>
+                                {% endfor %}
                             </select>
                         </div>
-                        <input type="submit" id="edit-submit" name="op" value="Сохранить" class="form-submit btn btn-primary">
+                        <input type="submit" id="edit-submit" name="op" value="Сохранить"
+                               class="form-submit btn btn-primary">
                     </form>
                 </div>
             </div>
@@ -41,59 +52,87 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <table class="table table-striped custom-table datatable dataTable no-footer" id="DataTables_Table_0"
-                   role="grid" aria-describedby="DataTables_Table_0_info">
-                <thead>
-                {#<tr role="row">#}
-                    {#<th style="width: 20px;" class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0"#}
-                        {#rowspan="1" colspan="1" aria-sort="ascending"#}
-                        {#aria-label="Employee: activate to sort column descending">ID#}
-                    {#</th>#}
-                    {#<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"#}
-                        {#aria-label="Employee ID: activate to sort column ascending" style="width: 250px;">DocumentName#}
-                    {#</th>#}
-                    {#<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"#}
-                        {#aria-label="Email: activate to sort column ascending" >DocumentDescription#}
-                    {#</th>#}
-                    {#<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"#}
-                        {#aria-label="Joining Date: activate to sort column ascending" style="width: 49px;">TypeID#}
-                    {#</th>#}
-                    {#<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"#}
-                        {#aria-label="Role: activate to sort column ascending" style="width: 50px;">URL#}
-                    {#</th>#}
-                    {#<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"#}
-                        {#aria-label="Payslip: activate to sort column ascending" style="width: 30px;">#}
-                        {#<i class="fa fa-pencil-square-o"></i>#}
-                    {#</th>#}
-                    {#<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"#}
-                        {#colspan="1"#}
-                        {#aria-label="Action: activate to sort column ascending" style="width: 30px;">#}
-                        {#<i class="far fa-trash-alt"></i>#}
-                    {#</th>#}
-                {#</tr>#}
-                </thead>
-                <tbody>
-                {#{% for contract in contracts %}#}
-                    {#<tr role="row">#}
-                        {#<td> {{ document['DocumentID'] }} </td>#}
-                        {#<td> {{ document['DocumentName'] }} </td>#}
-                        {#<td> {{ document['DocumentDescription']  | slice(0, 250) }} </td>#}
-                        {#<td> {{ document['DocumentTypeID'] }} </td>#}
-                        {#<td> {{ document['DocumentExampleURL'] }} </td>#}
-                        {#<td>#}
-                            {#<a href="#">#}
-                                {#<i class="fa fa-pencil-square-o"></i>#}
-                            {#</a>#}
-                        {#</td>#}
-                        {#<td>#}
-                            {#<a href="#">#}
-                                {#<i class="far fa-trash-alt"></i>#}
-                            {#</a>#}
-                        {#</td>#}
-                    {#</tr>#}
-                {#{% endfor %}#}
-                </tbody>
-            </table>
+
+            <div class="contracts document-wrapper">
+                {% for id, contract in contracts %}
+                    <div class="contract-block-wrapper" number="{{ id }}">
+                    <div class="contract_name title-table">{{ contract['ContractName'] }}</div>
+
+                    <div class="actions">
+                        <div class="edit">
+                            <a target="_blank" href="/workflow/contract/5/edit">
+                                <i class="fa fa-pencil-square-o"></i>
+                            </a>
+                        </div>
+                        <div class="delete">
+                            <i class="far fa-trash-alt"></i>
+                        </div>
+                        <div class="checked-document-list">
+                            <a>
+                                <span>развернуть</span>
+                                <i class="fa fa-2x fa-angle-up" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="spliter"></div>
+                    <div class="body-document" style="display: none;">
+                        <div class="item">
+                            <span class="title">ContractName</span>
+                            <span class="value">{{ contract['ContractName'] }}</span>
+                        </div>
+                        <div class="item">
+                            <span class="title">ContractID</span>
+                            <span class="value">{{ contract['ContractID'] }}</span>
+                        </div>
+                        <div class="item">
+                            <span class="title">ContractDescription</span>
+                            <span class="value">{{ contract['ContractDescription'] }}</span>
+                        </div>
+                        <div class="item">
+                            <span class="title">ContractHelpInfo</span>
+                            <span class="value">{{ contract['ContractHelpInfo'] }}</span>
+                        </div>
+                        <div class="clear"></div>
+
+                        <table class="table table-striped custom-table datatable dataTable no-footer" id="DataTables_Table_0"
+                               role="grid" aria-describedby="DataTables_Table_0_info">
+                            <thead>
+                            <tr role="row">
+                                <th style="width: 20px;" class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0"
+                                    rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Employee: activate to sort column descending">ID
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                    aria-label="Employee ID: activate to sort column ascending" style="width: 250px;">DocumentName
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                    aria-label="Email: activate to sort column ascending" >DocumentDescription
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                    aria-label="Joining Date: activate to sort column ascending" style="width: 49px;">TypeID
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                    aria-label="Role: activate to sort column ascending" style="width: 50px;">URL
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for document in contract['documentList'] %}
+                                <tr role="row">
+                                    <td> {{ document['DocumentID'] }} </td>
+                                    <td> {{ document['DocumentName'] }} </td>
+                                    <td> {{ document['DocumentDescription']  | slice(0, 250) }} </td>
+                                    <td> {{ document['DocumentTypeID'] }} </td>
+                                    <td> {{ document['DocumentExampleURL'] }} </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
         </div>
     </div>
 

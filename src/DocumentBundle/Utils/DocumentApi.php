@@ -13,10 +13,10 @@ class DocumentApi{
 
     protected  $secret = "123";
 
-    protected  $container;
+    protected  $twig;
 
-    public function  __construct(ContainerInterface $container){
-        $this->container = $container;
+    public function  __construct(\Twig_Environment $twig){
+        $this->twig = $twig;
     }
 
     public function getTypicalDocuments(){
@@ -26,14 +26,30 @@ class DocumentApi{
               'Offset' => 1
           ]
         );
-        $request = $this->container->get('twig')->render('@Document/query.html.twig',[
+
+        $response = $this->getResponse($operation, $query);
+
+        return $this->parserRequest($response);
+    }
+
+    public function getTypicalDocumentOptions(){
+        $documents = $this->getTypicalDocuments();
+        $options = array();
+        foreach ($documents as $id => $document){
+            $options[$id] = $document['DocumentName'];
+        }
+        return $options;
+    }
+
+    protected function getResponse($operation, $query){
+        $parameters = [
             'operation' => $operation,
             'hash' => $this->getHash($operation),
             'query' => $query,
             'productId' => $this->productId,
-        ]);
-        $response = $this->executeQuery($request);
-        return $this->parserRequest($response);
+        ];
+        $request = $this->twig->render('@Document/query.html.twig', $parameters);
+        return $this->executeQuery($request);
     }
 
     protected function getHash($operation){

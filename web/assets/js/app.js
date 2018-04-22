@@ -29,7 +29,8 @@
 }(window.jQuery),
 
 $(document).ready(function() {
-	
+
+	$('select').select2();
 	// Sidebar overlay
 
 	var $sidebarOverlay = $(".sidebar-overlay");
@@ -167,14 +168,6 @@ $(document).ready(function() {
 	if($('.datetimepicker').length > 0 ){
 		$('.datetimepicker').datetimepicker({
 			format: 'DD/MM/YYYY'
-		});
-	}
-	
-	// Datatable
-
-	if($('.datatable').length > 0 ){
-		$('.datatable').DataTable({
-			"bFilter": false,
 		});
 	}
 	

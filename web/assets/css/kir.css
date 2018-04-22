@@ -13,3 +13,116 @@
 .dataTables_paginate.paging_simple_numbers{
     text-align: right;
 }
+
+#mandarin2-export-workflow-form .select2.select2-container{
+    width: 100% !important;
+    height: 30px !important;
+}
+
+.contract-block-wrapper {
+    margin-bottom: 23px;
+}
+
+.document-wrapper .title-table {
+    font-size: 16px;
+    float: left;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.document-wrapper .actions {
+    float: right;
+}
+
+.document-wrapper .actions div.edit, .document-wrapper .actions div.delete {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.document-wrapper .actions div {
+    float: left;
+    margin-right: 10px;
+}
+
+.document-wrapper .actions .checked-document-list a {
+    font-size: 12px;
+    display: block;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.checked-document-list a span {
+    vertical-align: middle;
+    padding-top: 4px;
+    display: block;
+    float: left;
+}
+
+.document-wrapper .spliter {
+    clear: both;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+}
+
+.document-wrapper i,
+.document-wrapper a{
+    color: #333;
+}
+
+.document-wrapper i{
+    font-size: 15px;
+}
+
+.body-document {
+    margin-top: 26px;
+}
+
+.document-wrapper .body-document .item {
+    /*margin-bottom: 10px;*/
+}
+
+.document-wrapper .body-document .item .title {
+    font-size: 12px;
+    width: 170px;
+    display: block;
+    float: left;
+}
+
+.document-wrapper .body-document .item .value {
+    font-size: 12px;
+    padding-bottom: 10px;
+    display: block;
+    margin-left: 170px;
+}
+
+.title-document {
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 12px;
+}
+
+.documents table, .contracts table, .services table {
+    width: 100%;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    border-collapse: collapse;
+    color: #686461;
+}
+
+.document-wrapper .documents table th {
+    text-align: left;
+    border: 0;
+    padding-left: 0;
+}
+
+.document-wrapper .documents table tr td {
+    padding-left: 0;
+    text-align: left;
+    vertical-align: top;
+}
+
+.checked-document-list .fa-angle-up,
+.checked-document-list .fa-angle-down{
+    font-size: 15px;
+    padding-top: 6px;
+    padding-left: 4px;
+}

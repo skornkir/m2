@@ -11,6 +11,13 @@ namespace DocumentBundle\Utils;
 
 class ContractApi extends DocumentApi
 {
+    public $documentApi;
+
+    public function __construct(\Twig_Environment $twig)
+    {
+        parent::__construct($twig);
+        $this->documentApi = new DocumentApi($twig);
+    }
 
     protected function getDocumentContracts($contract_id){
         $operation = 750;
@@ -23,13 +30,8 @@ class ContractApi extends DocumentApi
             ]
         ];
 
-        $request = $this->container->get('twig')->render('@Document/query.html.twig',[
-            'operation' => $operation,
-            'hash' => $this->getHash($operation),
-            'query' => $query,
-            'productId' => $this->productId,
-        ]);
-        $response = $this->executeQuery($request);
+        $response = $this->getResponse($operation, $query);
+
         $documents = array();
         if(!empty($response)){
             $xml_result = simplexml_load_string($response);
@@ -55,13 +57,8 @@ class ContractApi extends DocumentApi
                 'Offset' => 1
             ]
         );
-        $request = $this->container->get('twig')->render('@Document/query.html.twig',[
-            'operation' => $operation,
-            'hash' => $this->getHash($operation),
-            'query' => $query,
-            'productId' => $this->productId,
-        ]);
-        $response = $this->executeQuery($request);
+
+        $response = $this->getResponse($operation, $query);
         return $this->parserRequest($response);
     }
 
@@ -71,7 +68,6 @@ class ContractApi extends DocumentApi
             libxml_use_internal_errors(true);
             $xml_result = simplexml_load_string($request);
             if (!$xml_result) {
-                // echo "Failed loading XML\n"; //logger
                 dump('no valid xml');
             }
             else{
@@ -82,7 +78,7 @@ class ContractApi extends DocumentApi
                         "ContractName" => (string)$item->entity->StandardContract->ContractName,
                         "ContractDescription" => (string)$item->entity->StandardContract->ContractDescription,
                         "ContractHelpInfo" => (string)$item->entity->StandardContract->ContractHelpInfo,
-                        "DocumentList" => "",
+                        "documentList" => "",
                     );
                     $contracts[$id]['documentList'] = $this->getDocumentContracts($id);
                 }
