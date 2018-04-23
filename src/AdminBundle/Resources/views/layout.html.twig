@@ -83,6 +83,7 @@
                             <li><a href={{ path('typedoc') }}>Типовые документы</a></li>
                             <li><a href={{ path('typecontract') }}>Типовые контракты</a></li>
                             <li><a href={{ path('typeservice') }}>Типовые сервисы</a></li>
+                            <li><a href={{ path('doc_in_progress') }}>Документы в обработке</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -95,11 +96,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-sm-6 text-center">
-                                <div class="card-box">
-                                    <div id="area-chart" ></div>
-                                </div>
-                            </div>
+                            {% include '@Admin/DashBoard/documentInProgress.thml.twig'  %}
                         </div>
                     </div>
                 </div>

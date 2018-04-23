@@ -2,7 +2,7 @@
 
 namespace AdminBundle\Controller;
 
-use DocumentBundle\Utils\DocumentApi;
+use DocumentBundle\Utils\CompanyDocumentApi;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
@@ -13,8 +13,11 @@ class DashboardController extends Controller
      */
     public function dashboardAction()
     {
-        return $this->render('@Admin/dashboard.html.twig', array(
-        ));
+        $twig = $this->get('twig');
+        $companyDocument = new CompanyDocumentApi($twig);
+        $documents = $companyDocument->getCompanyDocuments( 'processing');
+        dump($documents);
+        return $this->render('@Admin/dashboard.html.twig', array( 'documents' => $documents));
     }
 
 }

@@ -1,0 +1,50 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block content %}
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-xs-12">
+                <h4 class="page-title">Документы в обработке</h4>
+            </div>
+        </div>
+
+        <div class="panel panel-table">
+            {#<div class="panel-heading">#}
+                {#<h3 class="panel-title">Документы в обработке</h3>#}
+            {#</div>#}
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped custom-table m-b-0">
+                        <thead>
+                        <tr>
+                            <th>CID</th>
+                            <th>DocumentID</th>
+                            {#<th>Файлы</th>#}
+                            <th>Статус</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for doc in documents %}
+                            <tr>
+                                <td>{{doc.ClientID}}</td>
+                                <td>{{doc.Document['DocumentName'] | slice(0,60)}}</td>
+                                <td class="files">
+                                    {% for file in doc.files %}
+                                         <div>{{ file['Description'] | slice(0, 60) }}</div>
+                                    {% endfor %}
+                                </td>
+                                <td>
+                                    <div class="status  processing">
+                                        {{doc.DocumentStatus}}
+                                    </div>
+
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

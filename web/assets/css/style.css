@@ -310,7 +310,7 @@ table.dataTable {margin-bottom: 15px !important;margin-top: 15px !important;}
 .user-img {display: inline-block;position: relative;}
 .user-img .status {border: 2px solid #fff;bottom: 0;height: 10px;margin: 0;position: absolute;right: 0;width: 10px;}
 .user-menu .user-img .status {bottom: 10px;}
-.status {background-color: #263238;border-radius: 50%;display: inline-block;height: 10px;margin-right: 10px;width: 10px;}
+/*.status {background-color: #263238;border-radius: 50%;display: inline-block;height: 10px;margin-right: 10px;width: 10px;}*/
 .status.online {background-color: #55ce63;}
 .status.offline {background-color: #f62d51;}
 .status.away {background-color: #faa937;}

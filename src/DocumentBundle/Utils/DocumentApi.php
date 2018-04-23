@@ -28,8 +28,40 @@ class DocumentApi{
         );
 
         $response = $this->getResponse($operation, $query);
-
         return $this->parserRequest($response);
+    }
+
+    public function getTypicalDocument($id){
+        $operation = 750;
+        $query = array(
+            'StandardDocument' => [
+                'DocumentID' => $id,
+            ]
+        );
+
+        $response = $this->getResponse($operation, $query);
+        $document = array();
+        if(!empty($response)){
+            libxml_use_internal_errors(true);
+            $xml_result = simplexml_load_string($response);
+            if (!$xml_result) {
+                // echo "Failed loading XML\n"; //logger
+            }
+            else{
+                foreach($xml_result->entities as $item){
+                    $document = array(
+                        "DocumentID" => (string)$item->entity->StandardDocument->DocumentID,
+                        "DocumentName" => (string)$item->entity->StandardDocument->DocumentName,
+                        "DocumentDescription" => (string)$item->entity->StandardDocument->DocumentDescription,
+                        "DocumentTypeID" => (string)$item->entity->StandardDocument->DocumentTypeID,
+                        "DocumentExampleURL" => (string)$item->entity->StandardDocument->DocumentExampleURL,
+                        "ID" => (string)$item->entity->StandardDocument->DocumentID,
+                    );
+                }
+            }
+
+        }
+        return $document;
     }
 
     public function getTypicalDocumentOptions(){
@@ -83,6 +115,8 @@ class DocumentApi{
         return $documents;
     }
 
+
+
     protected function executeQuery($request){
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->entryPoint);
@@ -95,29 +129,6 @@ class DocumentApi{
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: text/xml'));
         $response  = curl_exec($ch);
         curl_close($ch);
-
-//        if(!empty($response)){
-//            $xml_response = simplexml_load_string($response);
-//            if(isset($xml_response->message) && (string)$xml_response->message != "OK"){
-//                global $user;
-//                $fields = array(
-//                    'uid' => $user->uid,
-//                    'request' => $xml,
-//                    'response' => $response,
-//                    'message' => (string)$xml_response->message,
-//                    'code' => (string)$xml_response->code,
-//                );
-//                mandarin2_slack_notification_api_wrong('Обновление 109го источника', $fields);
-//            }
-//        }
-//        else{
-//            global $user;
-//            $fields = array(
-//                'uid' => $user->uid,
-//                'request' => $xml,
-//            );
-//            mandarin2_slack_notification_api_wrong('Отсутвует ответ 109го источника', $fields);
-//        }
 
         return $response;
     }
