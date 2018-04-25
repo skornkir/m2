@@ -9,8 +9,7 @@
 namespace DocumentBundle\Utils;
 
 
-class CompanyDocumentApi extends DocumentApi
-{
+class CompanyDocumentApi extends DocumentFlowApi{
 
     private $documentApi;
 

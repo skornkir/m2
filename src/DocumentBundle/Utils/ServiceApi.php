@@ -9,8 +9,7 @@
 namespace DocumentBundle\Utils;
 
 
-class ServiceApi extends DocumentApi
-{
+class ServiceApi extends DocumentFlowApi{
 
     public $contractApi;
 

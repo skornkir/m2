@@ -9,8 +9,7 @@
 namespace DocumentBundle\Utils;
 
 
-class ContractApi extends DocumentApi
-{
+class ContractApi extends DocumentFlowApi{
     public $documentApi;
 
     public function __construct(\Twig_Environment $twig)

@@ -205,3 +205,8 @@ table .files{
 .rowDashboard .panel{
     margin-bottom: 10px;
 }
+
+.status.waiting{
+    border: 1px solid #d2cc11;
+    color: #d2cc11;
+}
