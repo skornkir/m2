@@ -177,3 +177,31 @@ a i{
 table .files{
     word-break: break-word;
 }
+
+.col-md-6{
+    padding-left: 0px;
+    padding-right: 15px;
+}
+
+.rowDashboard .col-md-6:nth-child(2){
+    padding-right: 0;
+}
+
+.rowDashboard{
+    max-width: 100%;
+}
+
+.dashboard-block{
+    width: 50%;
+    padding-right: 10px;
+    height: auto;
+    float: left;
+}
+
+.dashboard-block:nth-child(2n){
+    padding-right: 0px;
+}
+
+.rowDashboard .panel{
+    margin-bottom: 10px;
+}

@@ -1,6 +1,144 @@
 {% extends "@Admin/layout.html.twig" %}
 
+ {% block js %}
+     <script src={{ asset('assets/plugins/masonry/masonry.pkgd.min.js') }}></script>
+     <script src={{ asset('assets/js/dashboard/dashboard.js') }}></script>
+ {% endblock %}
+
 {% block content %}
-    {{ parent() }}
+    <div class="rowDashboard">
+        <div class="dashboard-block">
+            {% include '@Admin/DashBoard/documentInProgress.thml.twig'  %}
+        </div>
+        <div class="dashboard-block">
+            <div class="panel panel-table">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Клиенты, ещё не одобренные <span class="badge bg-primary pull-right">4</span></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive" style="padding-bottom: 0px;">
+                        <table class="table table-striped custom-table m-b-0">
+                            <thead>
+                            <tr>
+                                <th style="min-width:200px;">Название</th>
+                                <th>Дата</th>
+                                <th class="text-right"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "КОМПЛЕКС-МОНТАЖ"</td>
+                                <td>28.10.17</td>
+                                <td class="text-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="#" title="Edit"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
+                                            <li><a href="#" title="Delete"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "АЙМАСТЕР"</td>
+                                <td>28.12.17</td>
+                                <td class="text-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="#" title="Edit"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
+                                            <li><a href="#" title="Delete"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Индивидуальный предприниматель Некрасова Татьяна</td>
+                                <td>14.06.17</td>
+                                <td class="text-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="#" title="Edit"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
+                                            <li><a href="#" title="Delete"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <a href="clients.html" class="text-primary">Полный список</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-block">
+            <div class="panel panel-table">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Проекты, ещё не одобренные <span class="badge bg-primary pull-right">4</span></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive" style="padding-bottom: 0px;">
+                        <table class="table table-striped custom-table m-b-0">
+                            <thead>
+                            <tr>
+                                <th style="min-width:70px;">Название</th>
+                                <th>Дата</th>
+                                <th class="text-right"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Айронмен</td>
+                                <td>12.01.10</td>
+                                <td class="text-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="#" title="Edit"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
+                                            <li><a href="#" title="Delete"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Smart Recovery</td>
+                                <td>12.05.12</td>
+                                <td class="text-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="#" title="Edit"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
+                                            <li><a href="#" title="Delete"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Гераклион мед</td>
+                                <td>12.05.12</td>
+                                <td class="text-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="#" title="Edit"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
+                                            <li><a href="#" title="Delete"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <a href="clients.html" class="text-primary">Полный список</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 

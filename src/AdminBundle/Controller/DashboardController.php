@@ -16,7 +16,6 @@ class DashboardController extends Controller
         $twig = $this->get('twig');
         $companyDocument = new CompanyDocumentApi($twig);
         $documents = $companyDocument->getCompanyDocuments( 'processing');
-        dump($documents);
         return $this->render('@Admin/dashboard.html.twig', array( 'documents' => $documents));
     }
 

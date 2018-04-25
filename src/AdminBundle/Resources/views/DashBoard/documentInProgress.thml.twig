@@ -1,10 +1,9 @@
 {#{% extends '@Admin/DashBoard/DashboadBlock.html.twig' %}#}
 
 {% block dashboardBlock %}
-    <div class="col-md-6">
-        <div class="panel panel-table">
+    <div class="panel panel-table">
         <div class="panel-heading">
-            <h3 class="panel-title">Документы в обработке</h3>
+            <h3 class="panel-title">Документы в обработке <span class="badge bg-primary pull-right">{{ documents | length }}</span></h3>
         </div>
         <div class="panel-body">
             <div class="table-responsive">
@@ -18,23 +17,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                        {% for doc in documents %}
-                            <tr>
-                                <td>{{doc.ClientID}}</td>
-                                <td>{{doc.Document['DocumentName'] | slice(0,60)}}</td>
-                                {#<td>#}
-                                    {#{% for file in doc.files %}#}
-                                        {#<div>{{ file['Description'] }}</div>#}
-                                    {#{% endfor %}#}
-                                {#</td>#}
-                                <td>
-                                    <div class="status  processing">
-                                        {{doc.DocumentStatus}}
-                                    </div>
+                    {% for doc in documents %}
+                        <tr>
+                            <td>{{ doc.ClientID }}</td>
+                            <td>{{ doc.Document['DocumentName'] | slice(0,60) }}</td>
+                            {#<td>#}
+                            {#{% for file in doc.files %}#}
+                            {#<div>{{ file['Description'] }}</div>#}
+                            {#{% endfor %}#}
+                            {#</td>#}
+                            <td>
+                                <div class="status  processing">
+                                    {{ doc.DocumentStatus }}
+                                </div>
 
-                                </td>
-                            </tr>
-                        {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -42,6 +41,5 @@
         <div class="panel-footer">
             <a href="#" class="text-primary">Полный список</a>
         </div>
-    </div>
     </div>
 {% endblock %}
