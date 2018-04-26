@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -193,7 +194,8 @@ class User implements  UserInterface
      */
     public function eraseCredentials()
     {
-       // $this->password = null;
+        $this->plainPassword = null;
     }
+
 }
 
