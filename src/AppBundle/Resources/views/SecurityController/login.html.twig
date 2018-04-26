@@ -41,9 +41,6 @@
         @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/ui/themes/base/jquery.ui.tooltip.css?p74j5r");
         @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/ctools/css/ctools.css?p74j5r");
         @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/libraries/jgrowl/jquery.jgrowl.min.css?p74j5r");
-        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/m2messages/css/nicemessages_positions.css?p74j5r");
-        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/m2messages/css/nicemessages_jgrowl.css?p74j5r");
-        @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/m2messages/css/shadows.css?p74j5r");
         @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/panels/css/panels.css?p74j5r");
         @import url("https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/mandarin2_blocks/css/style.css?p74j5r");
     </style>
@@ -72,35 +69,11 @@
     <script src="https://admin.mandarin.ct101.ruswebs.ru/misc/jquery.once.js?v=1.2"></script>
     <script src="https://admin.mandarin.ct101.ruswebs.ru/misc/drupal.js?p74j5r"></script>
     <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/omega/omega/js/no-js.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/ui/ui/jquery.ui.core.js?v=1.10.2"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/ui/ui/jquery.ui.widget.js?v=1.10.2"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/ui/ui/jquery.ui.position.js?v=1.10.2"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/jquery_update/replace/ui/ui/jquery.ui.tooltip.js?v=1.10.2"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/default/files/languages/ru_Q8xy6mZwd4XDrh8gEMII0VM2QtaG7CwsvgTUOx2TX_8.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/libraries/jgrowl/jquery.jgrowl.min.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/m2messages/js/nicemessages.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/mandarin2_blocks/js/merchant_left_menu.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/HoldOn/HoldOn.min.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/mandarin.behaviors.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/menu-disable.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/sha256.jquery.debug.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/jquery.cookie.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/onoff.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/uniform.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/dynamic.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/bootstrap.min.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/bootstrap-datepicker.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/bootstrap-datepicker.ru.js?p74j5r"></script>
-    <script src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/themes/mandarin/js/date.js?p74j5r"></script>
-    <script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","nicemessages":{"position":"top-right","items":[]},"urlIsAjaxTrusted":{"\/user":true}});</script>
-    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
-
-    <!--  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />-->
-    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>-->
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href={{ asset('assets/css/kir.css') }} rel="stylesheet">
+
 
 </head>
 <body class="html not-front not-logged-in page-user section-user">
@@ -113,11 +86,7 @@
 <![endif]-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/suggestions-jquery@17.5.0/dist/js/jquery.suggestions.min.js"></script>
 <script type="text/javascript" src="https://admin.mandarin.ct101.ruswebs.ru/sites/all/modules/_custom/mandarin2_user/js/jquery.maskedinput.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#edit-phone").mask("+7(999)999-99-99");
-    });
-</script>
+
 <div class="new-login-wallet">
     <div class="background-image">
         <div class="header-login">
@@ -127,45 +96,29 @@
         </div>
         <div class="wrapper-form-login">
 
-            <form class="user-login" id="user-login" accept-charset="UTF-8" action="{{ path('login') }}" method="post">
-                <div><input type="hidden" name="form_build_id"
-                            value="form--bEIaPVWHtTAUjk6JXiBGAu06_eUNkDYcg6MmiG25BI"/>
-                    <input type="hidden" name="form_id" value="user_login"/>
-                    <div class="headform">Вход в личный кабинет</br>
-                        <div style="padding-top:10px">для юридических лиц</div>
-                    </div>
-                    <div class="form-item form-type-textfield form-item-name">
-                        <label for="edit-name">E-mail <span class="form-required"
-                                                            title="Это поле обязательно для заполнения.">*</span></label>
-                        <input placeholder="Электронная почта" type="text" id="edit-name" name="_username" value="{{ last_username }}" size="60"
-                               maxlength="60" class="form-text required"/>
-                        <div class="description">Укажите ваш E-mail.</div>
-                    </div>
-                    <div class="form-item form-type-password form-item-pass">
-                        <label for="edit-pass">Пароль <span class="form-required"
-                                                            title="Это поле обязательно для заполнения.">*</span></label>
-                        <input placeholder="Пароль" type="password" id="password" name="_password" size="60" maxlength="128"
-                               class="form-text required"/>
-                        <div class="description">Укажите пароль, соответствующий вашему E-mail.</div>
-                    </div>
-                    <div class="form-actions form-wrapper" id="edit-actions">
-                        {#<input type="submit" id="edit-submit" name="op" value="Войти" class="form-submit"/>#}
-                        <button type="submit">login</button>
-                    </div>
-
-                    <div class="footformwrapper">
-                        <div class="footform">
-                            <div class="linkregister"><a href="/user/register">Нет аккаунта? Регистрация</a></div>
-                            <div class="linkrestore"><a href="/user/password">Забыли пароль?</a></div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-
             {% if error %}
-                <div>{{ error.messageKey | trans(error.messageData, 'security') }}</div>
+                <div class="alert alert-danger">
+                    Неверный логин или пароль
+                    {#{{ error.messageKey|trans(error.messageData, 'security') }}#}
+                </div>
             {% endif %}
 
+            {{ form_start(form) }}
+                <div class="headform">Вход в личный кабинет</br>
+                    <div style="padding-top:10px">для юридических лиц</div>
+                </div>
+                {{ form_row(form._username) }}
+                {{ form_row(form._password) }}
+                {#<input type="submit" id="edit-submit" name="op" value="Войти" class="form-submit"/>#}
+                <button type="submit">Войти</button>
+                <div class="footformwrapper">
+
+                    <div class="footform">
+                        <div class="linkregister"><a href="/user/register">Нет аккаунта? Регистрация</a></div>
+                        <div class="linkrestore"><a href="/user/password">Забыли пароль?</a></div>
+                    </div>
+                </div>
+            {{ form_end(form) }}
         </div>
     </div>
 </div>

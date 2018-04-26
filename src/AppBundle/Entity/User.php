@@ -36,12 +36,36 @@ class User implements  UserInterface
      */
     private $password;
 
+    private $plainPassword;
+
+    /**
+     * @return mixed
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param mixed $plainPassword
+     */
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
+        $this->password = null;
+    }
+
     /**
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=255)
      */
     private $username;
+
+//    /**
+//     * @ORM\Column(type="json_array")
+//     */
+//    private $roles = [];
 
 
     /**
@@ -123,7 +147,7 @@ class User implements  UserInterface
      */
     public function getUsername()
     {
-        return $this->username;
+        return $this->email;
     }
 
     /**
@@ -145,7 +169,7 @@ class User implements  UserInterface
     public function getRoles()
     {
         return[
-
+            'ROLE_MANAGER',
         ];
     }
 
@@ -158,7 +182,7 @@ class User implements  UserInterface
      */
     public function getSalt()
     {
-        // TODO: Implement getSalt() method.
+
     }
 
     /**
@@ -169,7 +193,7 @@ class User implements  UserInterface
      */
     public function eraseCredentials()
     {
-        // TODO: Implement eraseCredentials() method.
+       // $this->password = null;
     }
 }
 
