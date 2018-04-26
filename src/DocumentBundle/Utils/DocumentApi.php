@@ -2,7 +2,7 @@
 
 namespace DocumentBundle\Utils;
 
-class DocumentApi extends DocumentFlowApi {
+class DocumentApi extends InfoApi {
 
     public function  __construct(\Twig_Environment $twig){
         parent::__construct($twig);

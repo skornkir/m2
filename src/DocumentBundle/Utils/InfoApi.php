@@ -9,7 +9,7 @@
 namespace DocumentBundle\Utils;
 
 
-abstract class DocumentFlowApi
+abstract class InfoApi
 {
 
     protected $entryPoint = "https://id01.mandarinpay.com/infoapi";
@@ -39,7 +39,6 @@ abstract class DocumentFlowApi
         $htext = "$this->secret-$operation-$this->productId";
         return  md5($htext);
     }
-
 
     protected function executeQuery($request){
         $ch = curl_init();
